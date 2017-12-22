@@ -4,7 +4,7 @@
 这里是Epi的各类教程仓库
 
 ## 教程列表
-暂无
+* [Terminal Tutorial](/tree/master/Terminal%20Tutorial)
 
 ## 许可证
 MIT
