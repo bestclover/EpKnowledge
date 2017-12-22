@@ -64,7 +64,7 @@ CentOS等等也基本类似
 其它系统平台请略过，往后看
 ### 第一个命令
 ``` batch
-echo 你好，命令行 rem rem后面为注释，不要输入
+echo 你好，命令行 rem "rem"后面为注释，不要输入
 ```
 上方的阴影区域就是我们要输入进去的命令，其中由两个部分组成<br>
 ![first](first.png)<br>
@@ -173,7 +173,8 @@ more 1.c
 假定我们还是那个`Hello World`文件夹<br>
 ![tab](tab.png)<br>
 `cd`时候敲一个`H`，接着按下键盘上的`Tab`键，也就是切换大写的上面那个，就会出现完整的"Hello World"<br>
-当然，这里只敲一个H是因为目录下只有一个以H开头的文件/文件夹，如果有多的，就输入直到那个字母`仅有一个可配对`的为止
+当然，这里只敲一个H是因为目录下只有一个以H开头的文件/文件夹，如果有多的，就输入直到那个字母`仅有一个可配对`的为止<br>
+![gif](fast.gif)
 
 ## Linux命令入门篇
 在往下阅读前提示，`$`是代表着普通用户，不是输入$<br>
@@ -253,9 +254,10 @@ $ rm 1.c
 ```
 这样是删除那个叫做`1.c`的文件。若要删除文件夹，请使用：
 ```shell
-$ rm epi -rf
+$ rm [repo name] -rf
 ```
-递归删除一个文件夹，删除里面所有的内容
+递归删除一个文件夹，删除里面所有的内容<br>
+提示，不加`-rf`是不会通过的，因为不是文件
 
 ### pwd - 显示完整路径
 在Linux的命令行里，默认不显示路径全部内容的
@@ -348,7 +350,7 @@ $ cd $NAME
 ```shell
 $ alias DISMISS="sudo shutdown now"
 ```
-上面的意思是，我把`sudo shutdown now`简写成了`DISMISS`，这样执行`$ DISMISS`就等于执行了`sudo shutdown now`<br>
+上面的意思是，我把`sudo shutdown now`简写成了`DISMISS`，这样执行`$ DISMISS`就等于执行了`$ sudo shutdown now`<br>
 当然，这样子只能本次运行有效。若要长久有效，请写到`.bashrc`、`.zshrc`之类的文件里，后续章节会讲到
 
 
@@ -357,3 +359,5 @@ $ alias DISMISS="sudo shutdown now"
 除了Windows下的cmd，还有`git bash`，`cmder`，`ConEmu`之类的终端，大同小异<br>
 就好比狗的品种有好几种，一个道理<br>
 Linux下有`bash`，`zsh`
+
+## 未完待续……
