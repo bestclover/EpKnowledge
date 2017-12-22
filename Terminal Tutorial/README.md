@@ -12,7 +12,7 @@
 工程师可能不能随时守在服务器的旁边，但是如果要使用服务器，就必须用一个叫做`ssh`的程序来登录，远程执行命令。但为什么用Linux做服务器而不用Windows呢？首先，Linux有Minimal版的系统，就是纯命令行，没有GUI，这样减少了系统占用，尤其是内存。我们都知道现在Win10下4G内存平常使用都够呛，但是一个Minimal版的Linux的占用是多少？<br>
 我运行了一个没有图形界面的Arch Linux，执行命令查看
 ```bash
-free -mh
+$ free -mh  #前面的$ 号是默认存在的，用于区分普通用户和root
 ```
 结果是：<br>
 ![free](free-mh.png)<br>
@@ -64,7 +64,7 @@ CentOS等等也基本类似
 其它系统平台请略过，往后看
 ### 第一个命令
 ``` batch
-echo 你好，命令行 #井号后面为注释，不要输入
+echo 你好，命令行 rem rem后面为注释，不要输入
 ```
 上方的阴影区域就是我们要输入进去的命令，其中由两个部分组成<br>
 ![first](first.png)<br>
@@ -90,7 +90,7 @@ dir
 
 ### 新建一个文件夹
 ``` batch
-mkdir epi   #意思是在当前目录新建一个叫做epi的文件夹
+mkdir epi   rem 意思是在当前目录新建一个叫做epi的文件夹
 ```
 这个命令是用来新建文件夹的，我们可以用`dir`来看创建的结果
 ![mkdir](mkdir.png)<br>
@@ -100,7 +100,7 @@ mkdir epi   #意思是在当前目录新建一个叫做epi的文件夹
 ### Goto Anywhere
 既然涉及了路径，有的时候我们要去别的路径下，那么要使用`cd`命令，带我们过去
 ``` batch
-cd epi  # 进入当前目录下那个叫做epi的文件夹
+cd epi  rem 进入当前目录下那个叫做epi的文件夹
 ```
 ![cd](cd.png)<br>
 这时候我们就会看到，路径变了<br>
@@ -108,7 +108,7 @@ cd epi  # 进入当前目录下那个叫做epi的文件夹
 ![chw](cd_hello_world.png)<br>
 回到上一个文件夹怎么办呢？
 ``` batch
-cd ..   # cd加上一个空格再写两个.
+cd ..   rem cd加上一个空格再写两个.
 ```
 ![cd..](cd...png)<br>
 记得参数之间是有空格的<br>
