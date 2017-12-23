@@ -6,7 +6,7 @@
 在Mac下开发C语言有两种方式，一种是命令行的gcc，一种是IDE式的Xcode。重点介绍前者，因为前者为命令行，并且在写和编译前还有一些事情需要去做。后者比较庞大，仅仅用来写C有点高射炮打蚊子的意思，最主要是有界面，只需要记得几个单词就可以使用了
 
 ## 先决条件
-阅读gcc部分前，我假定你已经有最基础的[Shell](https://github.com/m4XEp1/Epis-Knowledge-Repo/tree/master/Terminal%20Tutorial)使用本领<br>
+阅读gcc部分前，我假定你已经有最基础的[Shell使用本领](https://github.com/m4XEp1/Epis-Knowledge-Repo/tree/master/Terminal%20Tutorial)<br>
 下面开始介绍两个工具的安装和使用
 
 ## gcc
@@ -55,7 +55,12 @@ $ brew install git
 ```shell
 $ gcc
 ```
-只要不是`command not fount`，那就是完成了
+只要不是`command not fount`，那就是完成了<br>
+你也可以
+```shell
+$ gcc --version
+```
+查看当前版本
 
 ### 编译
 ```shell
@@ -67,15 +72,25 @@ $ gcc [filename]
 $ gcc [filename] -o [filename]
 ```
 选项`-o`的意思是 output ，-o 的后面跟上你想要的名字<br>
+例子：
+```shell
+$ gcc 1.c  # 编译那个叫做1.c的文件
+```
+```shell
+$ gcc 1.c -o hello 	# 编译那个叫做1.c的文件，并生成hello的可执行程序
+```
 
 ### 执行
 ```shell
 $ ./[filename]
 ```
+例子：
+```shell
+$ ./hello
+```
 
 ### 编辑
 你可以下载[sublime](https://www.sublimetext.com/), [nodepad++](https://notepad-plus-plus.org/)，或者使用[nano](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Terminal%20Tutorial/README.md#nano---%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8B%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BC%96%E8%BE%91%E5%99%A8)作为编辑器
-
 
 ## Xcode
 
