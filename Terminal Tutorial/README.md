@@ -83,7 +83,7 @@ echo "Hello World"
 ![Hello World](Hello.png)
 
 ### 列出当前目录的东西 - dir
-``` batch
+```batch
 dir
 ```
 这个命令是列出当前路径下的所有`文件`和`文件夹`<br>
@@ -108,7 +108,7 @@ del xxx.jpg
 
 ### Goto Anywhere - cd
 既然涉及了路径，有的时候我们要去别的路径下，那么要使用`cd`命令，带我们过去
-``` batch
+```batch
 cd epi
 ```
 意思是进入一个叫做`epi`的文件夹
@@ -117,7 +117,7 @@ cd epi
 如果我们有一个文件夹的名字是`带了空格`的呢？那就加上双引号<br>
 ![chw](cd_hello_world.png)<br>
 回到上一个文件夹怎么办呢？
-``` batch
+```batch
 cd ..
 ```
 `cd`加上一个空格再写两个`.`
@@ -125,13 +125,13 @@ cd ..
 记得参数之间是有空格的<br>
 如果你不想一直敲cd进入某个文件夹，你想一次进入，可以把地址复制下来<br>
 ![path](path1.png)<br>
-``` batch
+```batch
 cd [你所复制的内容]
 ```
 然后就会快速的过去了<br>
 ![fast](fast.png)<br>
 我们的电脑硬盘一般都有几个分区，如果要切换，就敲那个`盘符`+`半角冒号`，如：
-``` batch
+```batch
 D:  
 ```
 ![D](D.png)<br>
@@ -142,7 +142,7 @@ D:
 假定我们现在有一个叫做`Hello.exe`的用C语言说Hello的程序，就在我们所在的目录下<br>
 ![run_exe](run_exe.png)<br>
 直接敲名字即可运行(也可以带上那个`.exe`)
-``` batch
+```batch
 Hello
 ```
 ![run_ret](run_ret.png)<br>
@@ -153,7 +153,7 @@ Hello
 * Before<br>
 ![before](run_ret.png)
 
-``` batch
+```batch
 cls
 ```
 
@@ -165,7 +165,7 @@ cls
 
 `more`命令会把参数所表示的文件的内容输出到屏幕上
 
-``` batch
+```batch
 more 1.c
 ```
 
@@ -200,7 +200,7 @@ more 1.c
 * 知道自己在哪个路径
 * 创建环境变量
 * 用自己喜欢的方式简写命令
-
+* 纯命令行的编辑文本
 
 ### echo
 和win下的cmd同理，但是会有细微差别
@@ -386,5 +386,23 @@ $ alias DISMISS="sudo shutdown now"
 ```
 上面的意思是，我把`sudo shutdown now`简写成了`DISMISS`，这样执行`$ DISMISS`就等于执行了`$ sudo shutdown now`<br>
 当然，这样子只能本次运行有效。若要长久有效，请写到`.bashrc`、`.zshrc`之类的文件里，后续章节会讲到
+
+### nano - 命令行下的“可视化”编辑器
+假定你所使用的Linux是没有GUI的，只有一台显示器和键盘，那么我们要编辑文本的话，用`echo`不太现实，所以我们用nano来编辑文本文件
+```shell
+$ nano 
+```
+![nano](nano.png)<br>
+于是我们打开了一个编辑器，这个就可以直接写东西了。控制就用方向键的上下左右<br>
+写完之后按下`ctrl + O`来保存（Mac上是`Control键 + O`），接着会让你写保存的文件名，写完按下回车就好了<br>
+![write](write.png)
+退出的话，用`ctrl + X`<br>
+如果要打开现有文件，把文件名字作为参数名
+```shell
+$ nano Hello.c
+```
+在编辑的时候，用`ctrl + V`翻到下一页，`ctrl + Y`翻到上一页。`ctrl + P`跳到下一行，`ctrl + X`跳到上一行<br>
+这些命令就已经足够使用来编辑文本了，要想了解更多，在打开nano后按下`ctrl + G`
+
 
 ## 未完待续……
