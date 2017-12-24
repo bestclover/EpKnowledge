@@ -1,12 +1,14 @@
 # 在Mac下开发C语言
 
+![runit](runit.png)
+
 ## 前言
 
 在mooc上的讨论区收到不少同学问怎么在自己的Mac上写C语言，Dev、CFree也基本上都是Windows下的。本文将介绍如何在Mac上开发C语言<br>
 在Mac下开发C语言有两种方式，一种是命令行的gcc，一种是IDE式的Xcode。重点介绍前者，因为前者为命令行，并且在写和编译前还有一些事情需要去做。后者比较庞大，仅仅用来写C有点高射炮打蚊子的意思，最主要是有界面，只需要记得几个单词就可以使用了
 
 ## 先决条件
-阅读gcc部分前，我假定你已经有最基础的[Shell使用本领](https://github.com/m4XEp1/Epis-Knowledge-Repo/tree/master/Terminal%20Tutorial)<br>
+阅读gcc部分前，我假定你已经有最基础的[Shell使用本领](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Terminal%20Tutorial/README.md)<br>
 下面开始介绍两个工具的安装和使用
 
 ## gcc
