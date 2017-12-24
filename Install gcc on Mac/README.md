@@ -116,7 +116,7 @@ Mac的安装比较人性化，不像Win一样还要自己选择一大堆的设�
 完成后，会出来一个窗口<br>
 ![welcome](welcome.png)<br>
 我们选择`Creat a new Xcode project`<br>
-接着会弹出一个标题为`Choose a template for your new project:`，标题的下面我们选择`macOS`，接着选择`Command Line Tool`，然后点击下方的`Next`<br>
+接着会弹出一个标题为`Choose a template for your new project:`的窗口，标题的下面我们选择`macOS`，接着选择`Command Line Tool`，然后点击下方的`Next`<br>
 ![CLT](CLT.png)<br>
 在新出来的页面里，在`Product Name`设置你的项目名字，下方的`Language`下拉菜单里选择`C`，`Organization Identifier`里可以随便写个东西<br>
 ![cinfo](cinfo.png)<br>
@@ -146,4 +146,4 @@ Mac的安装比较人性化，不像Win一样还要自己选择一大堆的设�
 如果你没有取消勾选欢迎界面下方的选项，在下次启动Xcode的时候窗口的右边会有你的项目，或者再新建一个，也是可以的
 
 ## 后记
-写本文的时候的机子配置是Macbook Air 13' ，可能没法顾全安装中产生的任何问题。如果有遇到问题且本文没有讲到的，请给我提[issue](https://github.com/m4XEp1/Epis-Knowledge-Repo/issues/new)，谢谢
+写本文的时候的机子配置是Macbook Air 13' ，可能没法顾全安装中产生的所有何问题。如果有遇到问题且本文没有讲到的，请给我提[issue](https://github.com/m4XEp1/Epis-Knowledge-Repo/issues/new)，谢谢
