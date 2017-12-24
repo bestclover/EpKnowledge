@@ -139,7 +139,7 @@ Mac的安装比较人性化，不像Win一样还要自己选择一大堆的设�
 ![run](run.png)<br>
 第一次使用会问你是否打开开发者模式，点击`Enable`，输入你的密码<br>
 ![enable](enable.png)<br>
-如果代码没有写错的话，会弹出一个提示`Build Succeeded`，下方会有一个黑色的图标，单击它，就可以看到运行结果了<br>
+如果代码没有写错的话，会弹出一个提示`Build Succeeded`，下方最左边有一个向上的箭头，单击它，就可以看到运行结果了<br>
 ![cli](cli.png)<br>
 ![result](result.png)<br>
 右边的窗口为结果<br>
