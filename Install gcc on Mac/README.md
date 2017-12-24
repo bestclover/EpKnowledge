@@ -146,4 +146,4 @@ Mac的安装比较人性化，不像Win一样还要自己选择一大堆的设�
 如果你没有取消勾选欢迎界面下方的选项，在下次启动Xcode的时候窗口的右边会有你的项目，或者再新建一个，也是可以的
 
 ## 后记
-写本文的时候的机子配置是Macbook Air 13' ，可能没法顾全安装中产生的所有何问题。如果有遇到问题且本文没有讲到的，请给我提[issue](https://github.com/m4XEp1/Epis-Knowledge-Repo/issues/new)，谢谢
+写本文的时候的机子配置是Macbook Air 13' ，可能没法顾全安装中产生的所有问题。如果有遇到问题且本文没有讲到的，请给我提[issue](https://github.com/m4XEp1/Epis-Knowledge-Repo/issues/new)，谢谢
