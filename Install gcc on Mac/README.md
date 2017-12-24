@@ -46,9 +46,9 @@ $ xcode-select --install
 过一会会出现`Downloading Command Line Tools`，这就需要等了，如果你的网络不好，会等很久<br>
 等到终端等待我们输入下一条命令的时候，安装就是结束了
 
-### 最后一步 - 安装 git
+### 最后一步 - 安装 gcc
 ```shell
-$ brew install git
+$ brew install gcc
 ```
 网络良好的话，不用一分钟就结束了<br>
 这时候我们可以直接敲gcc来试一下是否安装成功
