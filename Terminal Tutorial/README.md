@@ -14,7 +14,7 @@ Windows下的`cmd`是一种Shell；最近微软搞了个非主流的东西，叫
 工程师可能不能随时守在服务器的旁边，但是如果要使用服务器，就必须用一个叫做`ssh`的程序来登录，远程执行命令。但为什么用Linux做服务器而不用Windows呢？首先，Linux有Minimal版的系统，就是纯命令行，没有GUI，这样减少了系统占用，尤其是内存。我们都知道现在Win10下4G内存平常使用都够呛，但是一个Minimal版的Linux的占用是多少？<br>
 我运行了一个没有图形界面的Arch Linux，执行命令查看
 ```shell
-$ free -mh  #前面的$ 号是默认存在的，用于区分普通用户和root，Mac和Windows下的 cmd无此命令
+$ free -mh  # 前面的$号叫做prompt，提示你在一个REPL环境下，如果是root用户会变成#，cmd下是>，Mac和Windows下的 cmd无此命令
 ```
 结果是：<br>
 ![free](free-mh.png)<br>
@@ -66,10 +66,11 @@ CentOS等等也基本类似
 其它系统平台请略过，往后看
 ### 第一个命令
 ``` batch
-echo 你好，命令行
+> echo 你好，命令行
 ```
-上方的阴影区域就是我们要输入进去的命令，其中由两个部分组成<br>
+上方的阴影区域就是我们要输入进去的命令，其中由三个部分组成<br>
 ![first](first.png)<br>
+`>`是prompt，默认存在，所以我们只需要输入`echo 你好，命令行`<br>
 `echo`是我们要运行的程序，中间有一个空格，`你好，命令行`是我们给它的参数<br>
 参数的意思是，我在程序启动的时候给了它一些东西，它会把这个东西拿去使用，比如在C语言里，我们读进一个数然后再输出，参数实际上是运行前就给它了<br>
 敲完之后我们敲`回车`<br>
@@ -77,14 +78,14 @@ echo 你好，命令行
 然后屏幕上出来了`你好，命令行`，这个是`程序的输出`<br>
 你也可以<br>
 ``` batch
-echo "Hello World"
+> echo "Hello World"
 ```
 在命令行程序里，给定参数的时候，如果参数中间有空格，用双引号把它包起来<br>
 ![Hello World](Hello.png)
 
 ### 列出当前目录的东西 - dir
 ```batch
-dir
+> dir
 ```
 这个命令是列出当前路径下的所有`文件`和`文件夹`<br>
 ![dir](dir.png)<br>
@@ -92,7 +93,7 @@ dir
 
 ### 新建一个文件夹 - mkdir
 ``` batch
-mkdir epi   rem 意思是在当前目录新建一个叫做epi的文件夹
+> mkdir epi   rem 意思是在当前目录新建一个叫做epi的文件夹
 ```
 这个命令是用来新建文件夹的，我们可以用`dir`来看创建的结果
 ![mkdir](mkdir.png)<br>
@@ -101,7 +102,7 @@ mkdir epi   rem 意思是在当前目录新建一个叫做epi的文件夹
 
 ### 删除文件 - del
 ```batch
-del xxx.jpg
+> del xxx.jpg
 ```
 这样，就可以删掉那个叫做`xxx.jpg`的图像文件了<br>
 你可以使用`dir`来查看删除的结果
@@ -109,7 +110,7 @@ del xxx.jpg
 ### Goto Anywhere - cd
 既然涉及了路径，有的时候我们要去别的路径下，那么要使用`cd`命令，带我们过去
 ```batch
-cd epi
+> cd epi
 ```
 意思是进入一个叫做`epi`的文件夹<br>
 ![cd](cd.png)<br>
@@ -118,7 +119,7 @@ cd epi
 ![chw](cd_hello_world.png)<br>
 回到上一个文件夹怎么办呢？
 ```batch
-cd ..
+> cd ..
 ```
 `cd`加上一个空格再写两个`.`<br>
 ![cd..](cd...png)<br>
@@ -126,13 +127,13 @@ cd ..
 如果你不想一直敲cd进入某个文件夹，你想一次进入，可以把地址复制下来<br>
 ![path](path1.png)<br>
 ```batch
-cd [你所复制的内容]
+> cd [你所复制的内容]
 ```
 然后就会快速的过去了<br>
 ![fast](fast.png)<br>
 我们的电脑硬盘一般都有几个分区，如果要切换，就敲那个`盘符`+`半角冒号`，如：
 ```batch
-D:  
+> D:  
 ```
 ![D](D.png)<br>
 这样就会去到D盘了<br>
@@ -143,7 +144,7 @@ D:
 ![run_exe](run_exe.png)<br>
 直接敲名字即可运行(也可以带上那个`.exe`)
 ```batch
-Hello
+> Hello
 ```
 ![run_ret](run_ret.png)<br>
 然后你会发现，不用加上`system("pause")`也不会闪退
@@ -154,7 +155,7 @@ Hello
 ![before](run_ret.png)
 
 ```batch
-cls
+> cls
 ```
 
 * After<br>
@@ -166,7 +167,7 @@ cls
 `more`命令会把参数所表示的文件的内容输出到屏幕上
 
 ```batch
-more 1.c
+> more 1.c
 ```
 
 ![more](more.png)
