@@ -13,7 +13,7 @@
 
 gcc是一个命令行工具，Mac虽然是基于Unix但不是自带的，就Minimal版的Linux一样，需要额外的安装<br>
 接下来就介绍安装方法<br>
-如果嫌长、没耐心、没兴趣的话，请直接往下看Xcode部分
+如果嫌长、没耐心、没兴趣的话，请直接往下看[Xcode](https://github.com/m4XEp1/Epis-Knowledge-Repo/tree/master/Install%20gcc%20on%20Mac#xcode)部分
 
 ### 试一波运气
 ```shell
@@ -144,4 +144,4 @@ Mac的安装比较人性化，不像Win一样还要自己选择一大堆的设�
 如果你没有取消勾选欢迎界面下方的选项，在下次启动Xcode的时候窗口的右边会有你的项目，或者再新建一个，也是可以的
 
 ## 后记
-写本文的时候的机子配置是Macbook Air 13' ，可能没法顾全安装中产生的任何问题。如果有遇到问题且本文没有讲到的，请给我提issue，谢谢
+写本文的时候的机子配置是Macbook Air 13' ，可能没法顾全安装中产生的任何问题。如果有遇到问题且本文没有讲到的，请给我提[issue](https://github.com/m4XEp1/Epis-Knowledge-Repo/issues/new)，谢谢
