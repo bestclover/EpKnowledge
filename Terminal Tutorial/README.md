@@ -14,7 +14,7 @@ Windows下的`cmd`是一种Shell；最近微软搞了个非主流的东西，叫
 工程师可能不能随时守在服务器的旁边，但是如果要使用服务器，就必须用一个叫做`ssh`的程序来登录，远程执行命令。但为什么用Linux做服务器而不用Windows呢？首先，Linux有Minimal版的系统，就是纯命令行，没有GUI，这样减少了系统占用，尤其是内存。我们都知道现在Win10下4G内存平常使用都够呛，但是一个Minimal版的Linux的占用是多少？<br>
 我运行了一个没有图形界面的Arch Linux，执行命令查看
 ```shell
-$ free -mh  # 前面的$号叫做prompt，提示你在一个REPL环境下，如果是root用户会变成#，cmd下是>，Mac和Windows下的 cmd无此命令
+$ free -mh  # 前面的$号叫做prompt，提示你在一个REPL环境下，不需要输入，如果是root用户会变成#，cmd下是>，Mac和Windows下的 cmd无此命令
 ```
 结果是：<br>
 ![free](free-mh.png)<br>
@@ -408,6 +408,74 @@ $ nano Hello.c
 ## Linux命令 - 初阶
 
 ### tail - 大文本的查看末尾
-有时候一个文件打开时候很大，但你又不想像cat那个样子全部阅读，我只需要那末尾的几行
+有时候一个文本打开时候很大，但你又不想像cat那个样子全部阅读，我只需要那末尾的几行或者那些字符，就要用到tail命令
+
+假定我们现在有一段代码，文件名字叫做main.go，内容是这样的
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    var Time, A, Ah, B, Bh int
+    var Aw, Bw int
+    Aw = 0
+    Bw = 0
+    fmt.Scanf("%d\n", &Time)
+    for i := 0; i < Time; i++ {
+        fmt.Scanf("%d %d %d %d\n", &A, &Ah, &B, &Bh)
+        sum := A + B
+        if Ah == sum {
+            if Bh == sum {
+                continue
+            } else {
+                Bw++
+            }
+        } else {
+                if Bh == sum {
+                Aw++
+            }
+        }
+    }
+    fmt.Print(Aw, Bw)
+}
+```
+
+我们要查看它的后面五行，命令为
+
+```shell
+$ tail main.go -n 5
+```
+
+也可以
+
+```shell
+$ tail main.go --line 5
+```
+
+```shell
+$ tail main.go    #这是默认末尾十行
+```
+
+![tailn](tailn.png)
+
+如果是后面的30个字符，命令为
+
+```shell
+$ tail main.go -c 30
+```
+
+![tailc](tailc.png)
+
+你也可以同时查看多个文件的末尾，例如
+
+```shell
+$ tail main.go spider.py
+```
+
+![tailmul](tailmul.png)
+
+它会默认显示十行并根据你的参数顺序来打印每个文件，加上文件名字
 
 ## 未完待续……
