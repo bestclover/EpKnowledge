@@ -11,7 +11,7 @@
 * [Terminal Tutorial](https://github.com/m4XEp1/Epis-Knowledge-Repo/tree/master/Terminal%20Tutorial/README.md)
 * [Install gcc on Mac](https://github.com/m4XEp1/Epis-Knowledge-Repo/tree/master/Install%20gcc%20on%20Mac/README.md)
 * [Why scanf_s](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Why%20scanf_s/README.md)
-* [Why multiple header files](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Why%20multipul%20header%files/README.md)
+* [Why multiple header files](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Why%20multiple%20header%20files/README.md)
 
 ## 许可证
 
