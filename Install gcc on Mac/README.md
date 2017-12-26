@@ -15,7 +15,7 @@
 
 gcc是一个命令行工具，Mac虽然是基于Unix但不是自带的，就Minimal版的Linux一样，需要额外的安装<br>
 接下来就介绍安装方法<br>
-如果嫌长、没耐心、没兴趣的话，请直接往下看[Xcode](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Install%20gcc%20on%20Mac/README.md#xcode)部分
+如果嫌长、没耐心、没兴趣的话，请直接往下看[Xcode](#xcode)部分
 
 ### 试一波运气
 ```shell
@@ -65,6 +65,7 @@ $ gcc --version
 查看当前版本
 
 ### 编译
+
 ```shell
 $ gcc [filename]
 ```
@@ -75,6 +76,7 @@ $ gcc [filename] -o [filename]
 ```
 选项`-o`的意思是 output ，-o 的后面跟上你想要的名字<br>
 例子：
+
 ```shell
 $ gcc 1.c  # 编译那个叫做1.c的文件
 ```
@@ -107,6 +109,7 @@ $ ./hello
 为什么不先写Xcode而是gcc呢，因为Xcode安装的时候会带上gcc，会影响安装的正确性和容错
 
 ### 第一次使用
+
 Mac的安装比较人性化，不像Win一样还要自己选择一大堆的设置<br>
 打开你的Xcode，第一次会让你接受一个License，点击`Agree`<br>
 ![license](license.png)<br>
@@ -116,6 +119,7 @@ Mac的安装比较人性化，不像Win一样还要自己选择一大堆的设�
 完成后，会出来一个窗口
 
 ### 新建一个项目
+
 ![welcome](welcome.png)<br>
 我们选择`Creat a new Xcode project`<br>
 接着会弹出一个标题为`Choose a template for your new project:`的窗口，标题的下面我们选择`macOS`，接着选择`Command Line Tool`，然后点击下方的`Next`<br>
@@ -128,6 +132,7 @@ Mac的安装比较人性化，不像Win一样还要自己选择一大堆的设�
 点击`Create`，接着会出来Xcode的界面
 
 ### 编辑
+
 ![main](main.png)<br>
 左边是我们的项目文件，你可以看到一个叫做`main.c`的文件，单击它<br>
 ![file](file.png)<br>
@@ -135,6 +140,7 @@ Mac的安装比较人性化，不像Win一样还要自己选择一大堆的设�
 如果你觉得文字字体太小，按下键盘的`command` + `+`，就可以放大。你也可以在上方菜单栏的`Editor -> Font size -> Increase`
 
 ### 运行
+
 写好之后，左上角有个播放的按键，单击它<br>
 ![run](run.png)<br>
 第一次使用会问你是否打开开发者模式，点击`Enable`，输入你的密码<br>
@@ -149,16 +155,20 @@ Mac的安装比较人性化，不像Win一样还要自己选择一大堆的设�
 ![scanf](scanf.png)
 
 ### 中止运行
+
 可能你的程序运行到一半但还没有结束，你不想继续了，可以点击播放案件旁边的停止键，来停止你正在运行的程序<br>
 ![stop](stop.png)
 
 ### 判断输入和输出的部分
+
 Xcode 使用是否为粗体来让你区分什么是你输入的什么是程序输出的，如图<br>
 ![input](input.png)
 
 
 ### 下次使用
+
 如果你没有取消勾选欢迎界面下方的选项，在下次启动Xcode的时候窗口的右边会有你的项目，或者再新建一个，也是可以的
 
 ## 后记
+
 写本文的时候的机子配置是Macbook Air 13' ，可能没法顾全安装中产生的所有问题。如果有遇到问题且本文没有讲到的，请给我提[issue](https://github.com/m4XEp1/Epis-Knowledge-Repo/issues/new)，谢谢
