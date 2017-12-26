@@ -2,9 +2,9 @@
 
 ## 说明
 
-这里是Epi的各类教程仓库，不定期更新，欢迎给我提issue/pull request
+这里是 Epi 的各类教程仓库，不定期更新，欢迎给我提 issue/pull request
 
-目前大部分来源是mooc的讨论区，你也可以在issue里问我问题
+目前大部分来源是 mooc 的讨论区，你也可以在 issue 里问我问题
 
 ## 教程列表
 
