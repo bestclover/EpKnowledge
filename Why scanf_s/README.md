@@ -117,7 +117,7 @@ int main()
 在第一个预处理器定义上，在末尾加上一个**半角分号**，然后粘贴
 
 ```c
-CRT_SECURE_NO_WARNINGS
+_CRT_SECURE_NO_WARNINGS
 ```
 
 像这样：
