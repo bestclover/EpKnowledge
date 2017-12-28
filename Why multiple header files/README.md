@@ -181,11 +181,11 @@ int main()
 然后查看一下两个文件的 .i 都有多少行
 
 ```shell
-$ wc -l main.c
+$ wc -l main.i
 ```
 
 ```shell
-$ wc -l main2.c
+$ wc -l main2.i
 ```
 
 ![endline](endline.png)
