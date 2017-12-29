@@ -8,7 +8,7 @@
 
 ## 前置条件
 
-阅读本文前，我假定你已经有一定的命令行功底，懂得 Win 环境下最基本的命令行操作
+阅读本文前，我假定你已经有一定的命令行功底，懂得 [Win 环境下最基本的命令行操作](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Terminal%20Tutorial/README.md#%E6%88%91%E4%BB%AC%E7%94%A8%E5%87%A0%E4%B8%AA%E5%91%BD%E4%BB%A4%E6%9D%A5%E5%85%A5%E9%97%A8-cmd)
 
 ## 什么是 gcc
 
@@ -82,17 +82,19 @@ Ctrl + Shift + P，之后敲 `Install Package Control`，回车
 
 菜单栏 -> 编码 -> 编码字符集 -> 中文 -> GB2312
 
-## 一些编译方式
+## 一些编译选项
 
 接下来的代码文件假设为 Hello.c
 
-### 编译并链接：
+### 默认编译
 
 ```batch
 > gcc Hello.c
 ```
 
 生成的是 `a.exe`，默认不显示警告
+
+![run](fast.gif)
 
 ### 编译并生成自定名字程序
 
@@ -158,7 +160,13 @@ Ctrl + Shift + P，之后敲 `Install Package Control`，回车
 > gcc Hello.c -O2
 ```
 
-意思是让 gcc 对代码做 O2 优化
+意思是让 gcc 对代码做 O2 优化，大部分情况下只用 -O2，优化开高了可能对程序造成影响
+
+* -O
+* -O1
+* -O2
+* -O3
+* -Os
 
 你可以使用下面的命令查看更多的优化选项
 
@@ -182,6 +190,10 @@ gcc 是一套工具链，在开头就讲过，`-time` 选项目的是把子进�
 
 意思是用 C99 的标准去编译这个文件
 
-类似的还有 C11, C89, C90, C9x, C1x 等等等等……
+类似的还有 C11, C89, C90, C9x, C1x, gnu89 等等等等……
+
+## 如果你是 32 位的系统
+
+
 
 ## 未完待续……

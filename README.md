@@ -12,6 +12,8 @@
 * [Install gcc on Mac](https://github.com/m4XEp1/Epis-Knowledge-Repo/tree/master/Install%20gcc%20on%20Mac/README.md)
 * [Why scanf_s](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Why%20scanf_s/README.md)
 * [Why multiple header files](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Why%20multiple%20header%20files/README.md)
+* [Compile C on command](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Compile%20C%20on%20command/README.md)
+* [Visual Studio Tutorial](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Visual%20Studio%20Tutorial/README.md)
 
 ## 许可证
 
