@@ -287,6 +287,8 @@ CentOS 等等也基本类似
 
 `~` 为用户目录
 
+你可以在 [Ubuntu 官网](http://cn.ubuntu.com/)，[CentOS 官网](https://www.centos.org/) 等地方下载一个桌面版的 Linux 来练习接下来的这些命令
+
 这些命令大部分同样在 Mac OS 上适用，因为他们的 Shell 都是 bash
 
 不适用的我会给出详细标注
@@ -471,30 +473,30 @@ $ sudo [command]
 
 ### shutdown/reboot - 关机和重启
 
+一分钟后关机：
 ```shell
 $ sudo shutdown
 ```
 
-直接敲 `sudo shutdown` 是一分钟后关机，取消这个关机用
+取消这个关机：
 
 ```shell
-$ sudo shutdown -c
+$ sudo shutdown -c    #c 是 cancel 的意思
 ```
 
-c 是 `cancel` 的意思
+立即关机：
+
 ```shell
 $ sudo shutdown now
 ```
 
-这是直接关机
+重启系统：
 
 ```shell
 $ sudo reboot
 ```
 
-这是重启
-
-### 执行当前目录下的文件
+### 执行当前目录下的文件 ###
 
 ```shell
 $ ./[filename]
@@ -603,9 +605,10 @@ $ nano Hello.c
 
 这些命令就已经足够使用来编辑文本了，要想了解更多，在打开 nano 后按下 `ctrl + G`
 
-## Linux 命令 - 初阶
+## Linux 命令 - 初阶 ##
 
-### tail - 大文本的查看末尾
+### tail - 大文本的查看末尾 ###
+
 有时候一个文本打开时候很大，但你又不想像 cat 那个样子全部阅读，我只需要那末尾的几行或者那些字符，就要用到 tail 命令
 
 假定我们现在有一段代码，文件名字叫做 main.go，内容是这样的
@@ -694,7 +697,7 @@ $ which [command]
 
 ```shell
 $ which ls      # 查看 ls 命令的位置
-$ which sudo    # 查看 sudo 命令的位置 
+$ which sudo    # 查看 sudo 命令的位置
 ```
 
 ### w - 几人登录了这台机子 ###
@@ -717,6 +720,7 @@ epi      pts/0     20:59    0.00s  0.10s  0.00s w
 此图上的 USER 就是用户名了；TTY 指的是你登录的终端类型；LOGIN@ 是登录的时间；IDLE 为用户的空闲时间，指的是显示这个信息到上一次你输入命令的间隔；JCPU 指的是和该终端连接的所有进程占用时间，包括前台和后台；WHAT 是当前正在运行进程的命令行
 
 一些参数说明
+
 ```shell
 $ w -h, --no-header     # 不打印 USER、TTY 等标题
 $ w -o, --old-style     # 旧式输出风格
@@ -724,6 +728,16 @@ $ w -V, --version       # w 命令的当前版本
 $ w -s, --short         # 简化输入的内容
 $ w -i, --ip-addr       # 显示登陆者的 IP 地址(如果可以)
 $ w -f, --from          # 显示登陆者的机子名称
+```
+
+### >> - 追加
+
+在入门的时候我们说过 `>` 是将输出重定向到文件的，也就是将输出写入。但是这个操作是会覆盖原来的内容的，意思是原来文件里有内容的话，这个操作就会把原来的内容删掉后写入新的内容
+
+如果是往文件末尾追加，就可以用 `>>`
+
+```shell
+$ echo "Hello World" >> 1.txt
 ```
 
 ## 未完待续……
