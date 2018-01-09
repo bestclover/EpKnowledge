@@ -722,12 +722,23 @@ epi      pts/0     20:59    0.00s  0.10s  0.00s w
 一些参数说明
 
 ```shell
-$ w -h, --no-header     # 不打印 USER、TTY 等标题
-$ w -o, --old-style     # 旧式输出风格
-$ w -V, --version       # w 命令的当前版本
-$ w -s, --short         # 简化输入的内容
-$ w -i, --ip-addr       # 显示登陆者的 IP 地址(如果可以)
-$ w -f, --from          # 显示登陆者的机子名称
+$ w -h
+$ w --no-header     # 不打印 USER、TTY 等标题
+
+$ w -o
+$ w --old-style     # 旧式输出风格
+
+$ w -V
+$ w --version       # w 命令的当前版本
+
+$ w -s
+$ w --short         # 简化输入的内容
+
+$ w -i
+$ w --ip-addr       # 显示登陆者的 IP 地址(如果可以)
+
+$ w -f
+$ w --from          # 显示登陆者的机子名称
 ```
 
 ### >> - 追加
