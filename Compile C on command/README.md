@@ -18,7 +18,7 @@ gcc，全称 GNU Compiler Collection，就是一套编译工具链。我们把�
 
 到[这里](https://nuwen.net/mingw.html)下载 MinGW，页面的 Download 处有一个 mingw-[version]-without-git，下载它
 
-如果你是 32 位系统，往后看
+如果你是 32 位系统，[往后看](#如果你是-32-位的系统)
 
 完成后，双击运行，解压到你想要的位置
 
@@ -194,6 +194,44 @@ gcc 是一套工具链，在开头就讲过，`-time` 选项目的是把子进�
 
 ## 如果你是 32 位的系统
 
+32 位系统可以选用 TDM 的 gcc
 
+进入 TDM 官网：http://tdm-gcc.tdragon.net ，点击 Download
 
-## 未完待续……
+下方 Installer 处有一个带着 32 图标的链接，单击它，会跳转到 SourceForge 的网站进行下载
+
+![32](w32gcc.png)
+
+下载完成后，双击安装，点击第一个选项 `Create`
+
+![Ist](Install.png)
+
+接下来读条结束后，保持默认的那个选项 (32-bit)，点击两次 `Next`
+
+选择路径，你也可以保持默认，点击 `Next`
+
+接着会问你要使用那个地方的镜像，点击 `Next` 就好了，就从默认的 SourceForge 下
+
+接下来的选项保持默认就好了，它会帮你添加到系统的环境变量 (PATH) 里，点击 `Install`
+
+等待读条结束，单击 `Next`，取消打钩 `Read the TDM-GCC README file (recommend)`，然后点击 `Finish`
+
+![Istgif](Istgif.gif)
+
+接下来就可以打开你的 cmd 敲 gcc 了
+
+## 后记
+
+### 为什么我们选择命令行？
+
+如今的电脑配置参差不齐，不一定都能带的动吃配置的怪物 VS (当然至少要流畅运行) ，但是 gcc 这种命令行的东西很轻快，它自己的大小也就一兆左右，编译又相当的迅速。最重要的是，没有 GUI 可以省下一大笔内存和配置，何乐而不为
+
+### 卸载和升级
+
+如果你选择的是 MinGW64 的 gcc，卸载非常简单，直接删除那个文件夹就好了
+
+如果你选择的是 TDM-GCC，在控制面板卸载就好
+
+MinGW64 的 gcc 升级只需要删除文件夹后下载新的版本就好了，或者解压覆盖
+
+TDM-GCC 同理
