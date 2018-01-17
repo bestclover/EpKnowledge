@@ -1,6 +1,6 @@
-# 在命令行下编译 C 语言 (Win 特指)
+# 在命令行下编译 C 语言 (安装过程特指 Win)
 
-有同学说，我电脑配置极低，VS 通常启动较慢，怎么通过命令行编译 C 程序？
+有同学说，我电脑配置极低，VS 通常启动和使用较慢，怎么通过命令行编译 C 程序？
 
 以前也确实遇到过这个情况，一台处理器为 U 的内存只有 2G 的电脑结果跑了一个 Win 8，这个环境下跑 VS 肯定是不方便了，连 Dev 也很慢。
 所以，如果学了一点命令行基础的，用命令行无疑是最合适的。动不动就看到一些个人服务器就一核处理器和 512M 的内存，带个 Minimal 的系统都不吃力。
@@ -13,6 +13,8 @@
 ## 什么是 gcc
 
 gcc，全称 GNU Compiler Collection，就是一套编译工具链。我们把一个或多个代码文件交给 gcc 后，它负责调用 cc1 程序生成经过预处理的 .i 文件，之后 cc1 拿着这些 .i 生成 .s 的汇编文件，之后 gcc 拿着这些汇编文件交给 as 程序让它生成 .o 的二进制代码文件，最后 collect2 程序把这些二进制代码文件链接到一起，生成一个可执行文件
+
+安装过程只讲 Win，Linux 基本上都是自带
 
 ## 下载 gcc (x64)
 
@@ -66,7 +68,7 @@ gcc，全称 GNU Compiler Collection，就是一套编译工具链。我们把�
 
 ### Sublime
 
-Ctrl + Shift + P，之后敲 `Install Package Control`，回车
+Ctrl + Shift + P，之后在弹出的框里输入 `Install Package Control`，回车
 
 等待若干秒后，会弹窗出现安装成功的提示，点击确定关闭。接着 Ctrl + Shift + P，敲 `Install Package`，过一会会出来一个列表，输入 `ConvertToUTF8`，按回车即可安装
 
@@ -124,7 +126,7 @@ Ctrl + Shift + P，之后敲 `Install Package Control`，回车
 > gcc Hello.c --save-temps
 ```
 
-### 只做预处理
+### 只做预处理，不进行编译汇编和链接
 
 ```batch
 > gcc -E Hello.c
@@ -144,7 +146,7 @@ Ctrl + Shift + P，之后敲 `Install Package Control`，回车
 > gcc -E Hello.c > Hello.i
 ```
 
-### 只做编译
+### 只做编译，不进行汇编和链接
 
 ```batch
 > gcc -S Hello.c
@@ -152,7 +154,7 @@ Ctrl + Shift + P，之后敲 `Install Package Control`，回车
 
 生成 .s 汇编代码
 
-### 只做编译和汇编
+### 只做编译和汇编，不做链接
 
 ```batch
 > gcc -c Hello.c
@@ -191,11 +193,19 @@ Ctrl + Shift + P，之后敲 `Install Package Control`，回车
 * -O2
 * -O3
 * -Os
+* -Ofast
+* -Og
 
 你可以使用下面的命令查看更多的优化选项
 
 ```batch
 > gcc --help=optimizers
+```
+
+### 显示编译过程
+
+```batch
+> gcc Hello.c -v
 ```
 
 ### 每个子进程所用的时间
@@ -205,6 +215,16 @@ Ctrl + Shift + P，之后敲 `Install Package Control`，回车
 ```
 
 gcc 是一套工具链，在开头就讲过，`-time` 选项目的是把子进程的耗时给显示出来
+
+### 使用管道代替临时文件
+
+```batch
+> gcc Hello.c -pipe
+```
+
+这个选项会在 --save-temps 选项存在时忽略
+
+![ignore](ignore_pipe.png)
 
 ### 遵循标准的编译
 
@@ -240,6 +260,38 @@ gcc 是一套工具链，在开头就讲过，`-time` 选项目的是把子进�
 
 至于什么之后要用到链接库呢……就看你的开发内容啦
 
+### 指定 include 的目录
+
+还记得吗，在代码中，include 的 <> 和 "" 是不一样的，<> 会在编译器指定的位置去找
+
+要指定这个 include 的位置，可以使用 -I 选项
+
+```batch
+> gcc -I[path]
+```
+
+如
+```batch
+> gcc -I"C:\Program Files (x86)\Dev-Cpp\MinGW64\lib\gcc\x86_64-w64-mingw32\4.9.2\include" Hello.c
+```
+
+### 指定静态链接库的目录
+
+和 include 一样，编译器有个默认的静态库目录
+
+若要自定，可以使用 -L 选项
+
+```
+> gcc -L[path]
+```
+
+如
+```batch
+> gcc -L"C:\Program Files (x86)\Dev-Cpp\MinGW64\lib" -L"C:\Program Files (x86)\Dev-Cpp\MinGW64\x86_64-w64-mingw32\lib" Hello.c
+```
+
+和指定 include 路径一样，-L 后面直接带上路径，不要有空格
+
 ## 如果你是 32 位的系统
 
 32 位系统可以选用 TDM 的 gcc
@@ -273,6 +325,8 @@ gcc 是一套工具链，在开头就讲过，`-time` 选项目的是把子进�
 ### 为什么我们选择命令行？
 
 如今的电脑配置参差不齐，不一定都能带的动吃配置的怪物 VS (当然至少要流畅运行) ，但是 gcc 这种命令行的东西很轻快，它自己的大小也就一兆左右，编译又相当的迅速。最重要的是，没有 GUI 可以省下一大笔内存和配置，何乐而不为
+
+而且，命令行更显得自己专业啊有木有 qwq
 
 ### 卸载和升级
 
