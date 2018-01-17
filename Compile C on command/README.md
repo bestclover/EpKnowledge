@@ -38,7 +38,7 @@ gcc，全称 GNU Compiler Collection，就是一套编译工具链。我们把�
 
 ### 如果你不是 Win10
 
-打开 Path，在弹出来的窗口的变量值的末尾，加上一个`半角冒号`，之后粘贴你复制的路径，点击确定
+打开 Path，在弹出来的窗口的变量值的末尾，加上一个 `半角冒号`，之后粘贴你复制的路径，点击确定
 
 ## 测试是否正确
 
@@ -88,6 +88,8 @@ Ctrl + Shift + P，之后敲 `Install Package Control`，回车
 
 ### 默认编译
 
+以 gcc + 代码文件名字
+
 ```batch
 > gcc Hello.c
 ```
@@ -110,7 +112,13 @@ Ctrl + Shift + P，之后敲 `Install Package Control`，回车
 > gcc -o main Hello.c
 ```
 
+注意，如果你看这篇文章的时候用的是 Linux 下的 gcc，-o 后面的文字是不加上 .exe 的
+
 ### 保存编译过程中的临时文件
+
+编译过程中经历了 预处理、编译、链接，中间是有临时文件生成的
+
+如果你想保存这些文件：
 
 ```batch
 > gcc Hello.c --save-temps
@@ -122,7 +130,19 @@ Ctrl + Shift + P，之后敲 `Install Package Control`，回车
 > gcc -E Hello.c
 ```
 
-生成 .i 的经过预处理的代码文件
+如果不指定 -o 的话，默认将预处理的结果输出到 stdout
+
+你可以指定输出文件，如
+
+```batch
+> gcc -E Hello.c -o Hello.i
+```
+
+或者使用 batch 自带的重定向
+
+```batch
+> gcc -E Hello.c > Hello.i
+```
 
 ### 只做编译
 
@@ -130,7 +150,7 @@ Ctrl + Shift + P，之后敲 `Install Package Control`，回车
 > gcc -S Hello.c
 ```
 
-生成汇编代码
+生成 .s 汇编代码
 
 ### 只做编译和汇编
 
@@ -138,7 +158,7 @@ Ctrl + Shift + P，之后敲 `Install Package Control`，回车
 > gcc -c Hello.c
 ```
 
-生成机器码文件
+生成 .o 机器码文件
 
 ### 打开警告信息
 
@@ -147,6 +167,10 @@ Ctrl + Shift + P，之后敲 `Install Package Control`，回车
 ```
 
 意思是打开大多数的警告
+
+格式为 -W+警告类型
+
+如 -Wmain 对 main 的警告
 
 你可以使用下面的命令查看更多的警告选项
 
@@ -162,7 +186,7 @@ Ctrl + Shift + P，之后敲 `Install Package Control`，回车
 
 意思是让 gcc 对代码做 O2 优化，大部分情况下只用 -O2，优化开高了可能对程序造成影响
 
-* -O
+* -O0
 * -O1
 * -O2
 * -O3
@@ -188,15 +212,39 @@ gcc 是一套工具链，在开头就讲过，`-time` 选项目的是把子进�
 > gcc Hello.c -std=c99
 ```
 
-意思是用 C99 的标准去编译这个文件
+意思是用 C99 的标准去编译这个文件，小写 c
 
 类似的还有 C11, C89, C90, C9x, C1x, gnu89 等等等等……
+
+### 链接静态库
+
+静态库是指在我们的应用中，有一些公共代码是需要反复使用，就把这些代码编译为 "库" 文件; 在链接步骤中，连接器将从库文件取得所需的代码，复制到生成的可执行文件中的这种库
+
+库文件在你安装目录下的 lib 目录，64 位下还有一个 32 位的库
+
+它们长这个样子：
+
+![lib](lib.png)
+
+链接的选项为 -l + 库名称
+
+如：
+
+```batch
+> gcc server.c -lws2_32
+```
+
+意思就是链接图片上那个叫做 libws2_32.a 的静态库文件
+
+文件名字是 lib 开头，你在编译选项里就掐头 (lib) 去尾 (.a)
+
+至于什么之后要用到链接库呢……就看你的开发内容啦
 
 ## 如果你是 32 位的系统
 
 32 位系统可以选用 TDM 的 gcc
 
-进入 TDM 官网：http://tdm-gcc.tdragon.net ，点击 Download
+进入 [TDM 官网](http://tdm-gcc.tdragon.net) ，点击 Download
 
 下方 Installer 处有一个带着 32 图标的链接，单击它，会跳转到 SourceForge 的网站进行下载
 
@@ -234,4 +282,16 @@ gcc 是一套工具链，在开头就讲过，`-time` 选项目的是把子进�
 
 MinGW64 的 gcc 升级只需要删除文件夹后下载新的版本就好了，或者解压覆盖
 
-TDM-GCC 同理
+TDM-GCC 同理，卸载后重装新版本就行
+
+### 解读一些命令的意思
+
+可能这么写会有点懵，或者换个方法说，这些选项示例都是单个出现的，如果我想既用这个选项也用那个选项呢？
+
+比如我找来了一段编译命令
+
+```batch
+> gcc -o server -O2 -std=c1x -lws2_32 server.c --save-temps -Wall
+```
+
+意思就是，生成的文件名字是 server.exe，使用 O2 优化，遵循 c1x 的标准，链接 libws2_32.a 的静态库，源文件是 server.c，保存临时文件，打开大多数警告
