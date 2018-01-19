@@ -6,9 +6,7 @@
 
 简要的来说，就是运行一类程序的环境。由于它的显示是一行一行的，所以我们把它叫做命令行
 
-
 命令行程序运行的时候会出现一个黑黑的窗口(初学 C 语言和 Java、Python 等命令行程序的应该都有所体会)，这个叫做 `Shell`，它是负责和程序交互的。我们给程序输入东西的时候，会等待回车，然后Shell把你输入的内容和回车一起带给你的程序。程序输出东西的时候，把内容交给Shell，Shell会帮我们打印出来
-
 
 Windows下的 `cmd` 是一种 Shell；最近微软搞了个非主流的东西，叫做 `PowerShell`，也是一种Shell；如果你另外安装了 `cmder` 啊 `ConEmu` 啊 `Git Bash` 啊，也是一种 Shell；Linux 下的 `Bash` 也是一种 Shell，等等等等。这些都是 Shell 的实例，就好比二哈、阿拉斯加、日天迪都是狗一样。本文旨在介绍一些命令和不同 Shell 之间的些许差别
 
@@ -23,7 +21,7 @@ Windows下的 `cmd` 是一种 Shell；最近微软搞了个非主流的东西，
 我运行了一个没有图形界面的 Arch Linux，执行命令查看
 
 ```shell
-$ free -mh  # 前面的 $ 号叫做 prompt，提示你在一个 REPL 环境下，不需要输入，如果是 root 用户会变成 #，cmd 下是 >，Mac 和 Windows 下的 cmd 无此命令
+$ free -mh
 ```
 
 结果是：
@@ -530,6 +528,59 @@ $ sudo shutdown now
 ```shell
 $ sudo reboot
 ```
+
+### 如果你是 Mac 的话
+
+关机应该是这样的：
+
+```shell
+$ sudo shutdown -h now
+```
+
+now 是立即的意思s
+
+重启
+
+```shell
+$ sudo shutdown -r now
+```
+
+睡眠
+
+```shell
+$ sudo shutdown -s now
+```
+
+后面的 now 可以改成自己想要的时间，如 +20，yymmddhhmm
+
+20 分钟后睡眠：
+
+```shell
+$ sudo shutdown -s +20
+```
+
+取消这个睡眠倒计时可以采用杀死进程的方式，执行上面命令的时候会输出进程的 pid
+
+![shutdown-s](shutdown-s.png)
+或者用 ps 查看当前进程：
+
+```shell
+$ ps -A
+```
+
+接着找到 shutdown -s +20 那一行
+
+![find-s](find-s.png)
+
+接着杀死这个进程：
+
+```shell
+$ sudo kill -9 882
+```
+
+其中 -9 等同于 -KILL
+
+你可以再次执行命令 `ps -A` 查看进程是否已经被杀死
 
 ### 执行当前目录下的文件 ###
 
