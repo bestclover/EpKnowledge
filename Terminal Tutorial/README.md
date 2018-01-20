@@ -334,6 +334,12 @@ $ echo "Hello World"
 
 ![linux_echo](linux_echo.png)
 
+没有双引号的时候，你也可以用 `\ ` 来转义空格字符
+
+![space](space.png)
+
+图上三行命令作为示范
+
 ### ls - list ###
 
 `ls` 命令的作用和 win 上的 `dir` 一样，是列出当前目录下的文件和文件夹的
@@ -377,6 +383,16 @@ $ ls -l -a
 这里的 ls 是程序名字，-a -l 是传给 ls 的参数，ls 程序会分析参数来做事情
 
 ![lsla](ls-la.png)
+
+-l 的前提下，想查看可读性较好的文件大小：
+
+```shell
+$ ls -lh
+```
+
+![ls-lh](ls-lh.png)
+
+大小单位这个就不在这啰嗦了
 
 ### cd ###
 
@@ -443,7 +459,7 @@ $ rm 1.c
 这样是删除那个叫做 `1.c` 的文件。若要删除文件夹，请使用：
 
 ```shell
-$ rm [repo name] -rf
+$ rm -rf [repo name] 
 ```
 
 递归删除一个文件夹，删除里面所有的内容
@@ -453,11 +469,12 @@ $ rm [repo name] -rf
 ### pwd - 显示完整路径 ###
 
 在 Linux 的命令行里，默认不显示路径全部内容的
+
+显示完整路径：
+
 ```shell
 $ pwd
 ```
-
-用 `pwd` 来确认当前所在路径
 
 ### cp - 拷贝文件
 
@@ -472,6 +489,7 @@ $ cp [file] [path]
 ### sha256sum - 查看文件的文件指纹（Mac 环境不适用）
 
 我们从网上下载一个东西的时候，为了安全我们是需要验证文件指纹的
+
 ```shell
 $ sha256sum [filename]
 ```
@@ -487,6 +505,12 @@ $ sha1sum [filename]
 ```
 
 ![sha1sum](sha1sum.png)
+
+你也可以将输出的文本传给 sha256sum 来看它的 sha256sum 值：
+
+```shell
+echo "Hello World" | sha256sum
+```
 
 ### sudo - "super user do"
 
@@ -551,7 +575,7 @@ $ sudo shutdown -r now
 $ sudo shutdown -s now
 ```
 
-后面的 now 可以改成自己想要的时间，如 +20，yymmddhhmm
+后面的 now 可以改成自己想要的时间，如 +20, yymmddhhmm
 
 20 分钟后睡眠：
 
@@ -795,7 +819,15 @@ $ which ls      # 查看 ls 命令的位置
 $ which sudo    # 查看 sudo 命令的位置
 ```
 
-### w - 几人登录了这台机子 ###
+但是如果我们想看一下 cd 的位置的时候，输出结果是这样的
+
+```shell
+cd: shell built-in command
+```
+
+这是因为 cd 是 bash 它自身的命令，而不是一个具体的程序
+
+### w - 谁登陆了并且在做什么 ###
 
 服务器是需要登录使用的嘛，哪怕在物理机上直接用也是需要登录的对不对。但是协同工作的需要，一台机子不只是像 Windows 那样只能一个人在用，很多人可以同时登录这台机子。这时候就可以查看有多少人登录了这台机子
 
@@ -812,7 +844,7 @@ epi      tty1      21:19    3.00s  0.02s  0.02s -zsh
 epi      pts/0     20:59    0.00s  0.10s  0.00s w
 ```
 
-此图上的 USER 就是用户名了；TTY 指的是你登录的终端类型；LOGIN@ 是登录的时间；IDLE 为用户的空闲时间，指的是显示这个信息到上一次你输入命令的间隔；JCPU 指的是和该终端连接的所有进程占用时间，包括前台和后台；WHAT 是当前正在运行进程的命令行
+此图上的 USER 就是用户名了；TTY 指的是你登录的终端类型；LOGIN@ 是登录的时间；IDLE 为用户的空闲时间，指的是显示这个信息到上一次你输入命令的间隔；JCPU 指的是和该终端连接的所有进程占用时间，包括前台和后台；WHAT 是当前它在做什么事情
 
 一些参数说明
 
@@ -845,5 +877,99 @@ $ w --from          # 显示登陆者的机子名称
 ```shell
 $ echo "Hello World" >> 1.txt
 ```
+
+### ping - 测试网络延迟
+
+ping 这个词我们都不少见了，偶尔在 win 上我们也会用它来测试是否联网
+
+在 bash 下面的 ping 和 Win 下的不太一样，Win 默认 ping 4 次，bash 会一直 ping
+
+```shell
+$ ping <url>
+```
+
+一直 ping url 指示的服务器，你可以用 Ctrl + C (Mac 上是 Control + C) 来终止 ping 并统计 ping 的结果
+
+你也可以指定次数
+
+```shell
+$ ping -c 4 <url>
+```
+
+-c 之后是次数
+
+![ping-c](ping.png)
+
+你也可以指定发送每个 ping packet 的时间间隔
+
+```shell
+$ ping -i 1 so.com
+```
+
+-i 选项之后的数字时间单位是秒
+
+测试联网的时候，你还可以加上一个 -o 的选项
+
+```shell
+$ ping -o so.com
+```
+
+一直发送 ping packet，只要收到一个回复就正确退出
+
+不显示每个 packet 的结果，单纯显示结果
+
+```shell
+$ ping -q so.com
+```
+
+其中的 -q 意思是 quiet
+
+你还可以指定发送的 packet 大小
+
+```shell
+$ ping -s 128 so.com
+```
+
+不指定的情况下默认是 56
+
+### who - 简化版的 w
+
+who 和 w 的区别是，who 只显示谁登陆了
+
+```shell
+$ who
+```
+
+### read - 读取文字到变量
+
+默认读取一行，把它交给特定变量 REPLY：
+
+```shell
+$ read
+```
+
+你可以用 echo 来查看结果
+
+```shell
+$ echo $REPLY
+```
+
+读取并交给指定变量：
+
+```shell
+$ read Hello
+```
+
+意思是将读取到的东西交给 Hello
+
+你也可以给一些输出提示 (Mac 环境不适用)：
+
+```shell
+$ read -p "Please input"
+```
+
+操作提示的时候很奇怪，Mac 的终端没有 -p，而 iOS 却有，库克果然很奇怪 (
+
+
 
 ## 未完待续……
