@@ -56,7 +56,7 @@ gcc，全称 GNU Compiler Collection，就是一套编译工具链。我们把�
 > gcc --version
 ```
 
-如果你添加变量前就已经打开了 cmd 的话，重启之后新的环境变量才会生效
+如果你添加变量前就已经打开了 cmd 的话，重启之后新的环境变量才会生效
 
 ## 编辑你的代码
 
@@ -78,7 +78,7 @@ Ctrl + Shift + P，之后在弹出的框里输入 `Install Package Control`，�
 
 接下来重启你的 Sublime，在下次写代码遇到中文的情况，菜单栏 -> File -> Set File Encoding To -> Chinese Simplified(GBK)
 
-某一些魔改版 Sublime 会带上这个插件，视情况而定，如果已有就直接使用吧
+某一些魔改版 Sublime 会带上这个插件，视情况而定，如果已有就直接使用吧
 
 ### VS Code
 
@@ -90,7 +90,7 @@ Ctrl + Shift + P，之后在弹出的框里输入 `Install Package Control`，�
 
 ## 一些编译选项
 
-gcc 编译器提供了很多编译选项，涉及范围广，下面逐一解释常用的编译选项
+gcc 编译器提供了很多编译选项，涉及范围广，下面逐一解释常用的编译选项
 
 接下来的代码文件假设为 Hello.c
 
@@ -326,7 +326,7 @@ gcc 是一套工具链，在开头就讲过，`-time` 选项目的是把子进�
 
 接下来就可以打开你的 cmd 敲 gcc 了
 
-你会发现其实 TDM 也有 64 位的 gcc，而且安装的时候还不许需要配置环境变了变量这种东西
+你会发现其实 TDM 也有 64 位的 gcc，而且安装的时候还不需要配置环境变量这种东西
 
 但是为什么在 64 位上我们建议使用 MinGW 的 gcc 呢…… `gcc -- version` 会给你答案的
 

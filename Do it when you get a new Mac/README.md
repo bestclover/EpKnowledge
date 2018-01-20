@@ -44,7 +44,7 @@ $ xcode-select --install
 
 这里的断句应该是：安装 包管理器
 
-https://brew.sh/index_zh-cn.html，然后复制页面上的命令，粘贴到你的终端，执行
+https://brew.sh/index_zh-cn.html ，然后复制页面上的命令，粘贴到你的终端，执行
 
 ## 安装你需要的开发工具
 
@@ -62,7 +62,7 @@ $ brew install zsh zsh-completions
 
 安装完成后先不要打开 zsh，接着安装 oh my zsh
 
-https://github.com/robbyrussell/oh-my-zsh，在 oh my zsh 的开源仓库的 README 上有 via curl 的安装方式
+https://github.com/robbyrussell/oh-my-zsh ，在 oh my zsh 的开源仓库的 README 上有 via curl 的安装方式
 
 ```bash
 $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
