@@ -303,6 +303,8 @@ CentOS 等等也基本类似
 
 `~` 为用户目录
 
+每个命令的格式都是  名字 + 参数 (空格间隔)
+
 你可以在 [Ubuntu 官网](http://cn.ubuntu.com/)，[CentOS 官网](https://www.centos.org/) 等地方下载一个桌面版的 Linux 来练习接下来的这些命令
 
 这些命令大部分同样在 Mac OS 上适用，因为他们的 Shell 都是 bash
