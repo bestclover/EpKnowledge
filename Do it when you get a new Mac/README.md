@@ -18,6 +18,10 @@ Mac 的默认鼠标滚动是和 Win 相反的
 
 系统偏好设置 -> 鼠标 -> 取消打钩 **滚动方向：自然**
 
+## 安装 iTerm2 作为你的终端
+
+https://iterm2.com/
+
 ## 更改 root 密码
 
 ```bash
@@ -48,7 +52,7 @@ https://brew.sh/index_zh-cn.html ，然后复制页面上的命令，粘贴到�
 
 ## 安装你需要的开发工具
 
-```
+```bash
 $ brew install wget ...
 ```
 
@@ -56,7 +60,7 @@ $ brew install wget ...
 
 ## 美化你的终端
 
-```
+```bash
 $ brew install zsh zsh-completions
 ```
 
@@ -76,10 +80,20 @@ $ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/
 
 接着看终端上的提示就行了
 
-修改主题：
+## 安装 powerlevel9k
 
 ```bash
-$ vim .zshrc
+$ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 ```
 
-找到 ZSH_THEME 那一行，就看你喜欢什么主题，修改就好
+```bash
+$ vim ~/.zshrc
+```
+
+把 ZSH_THEME 那一行的双引号部分改成 `ZSH_THEME="powerlevel9k/powerlevel9k"`
+
+```bash
+$ source .zshrc
+```
+
+或重启 iTerm2

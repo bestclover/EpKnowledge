@@ -15,6 +15,10 @@
 * [Compile C on command](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Compile%20C%20on%20command/README.md)
 * [Visual Studio Tutorial](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Visual%20Studio%20Tutorial/README.md)
 
+## 个人认为不属于教程范围内的
+
+* [Do it when you get a new Mac](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Do%20it%20when%20you%20get%20a%20new%20Mac/README.md)
+
 ## 许可证
 
 MIT
