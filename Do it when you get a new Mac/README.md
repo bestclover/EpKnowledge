@@ -36,6 +36,10 @@ $ ssh-keygen
 
 这个在 git clone 等操作会用到
 
+## 打开远程登录
+
+系统偏好设置 -> 共享 -> 打钩**远程登录**
+
 ## 安装开发工具集
 
 ```bash
@@ -53,10 +57,10 @@ https://brew.sh/index_zh-cn.html ，然后复制页面上的命令，粘贴到�
 ## 安装你需要的开发工具
 
 ```bash
-$ brew install wget ...
+$ brew install wget node go coreutils gcc pypy3 python3 git vim unrar cabextract
 ```
 
-命令根据自身需要来改
+装 git 的目的是替换自带 git，命令根据自身需要来改
 
 ## 美化你的终端
 
@@ -90,7 +94,7 @@ $ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/the
 $ vim ~/.zshrc
 ```
 
-把 ZSH_THEME 那一行的双引号部分改成 `ZSH_THEME="powerlevel9k/powerlevel9k"`
+把 ZSH_THEME 那一行改成 `ZSH_THEME="powerlevel9k/powerlevel9k"`
 
 ```bash
 $ source .zshrc

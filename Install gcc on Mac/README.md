@@ -81,6 +81,8 @@ $ ./[filename]
 $ ./hello
 ```
 
+![Compile](Compile.gif)
+
 ### 编辑
 
 你可以下载 [sublime](https://www.sublimetext.com/), [nodepad++](https://notepad-plus-plus.org/)，或者使用 [nano](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Terminal%20Tutorial/README.md#nano---%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8B%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BC%96%E8%BE%91%E5%99%A8) 作为编辑器
@@ -141,7 +143,7 @@ Mac 的安装比较人性化，不像 Win 一样还要自己选择一大堆的�
 
 上图的名字可以做个参考
 
-接着会问你存在哪，我建议是在用户目录下存一个文件夹专门放置你的Xcode项目，这样找代码也方便找。同时建议取消打勾 `Creat Git repository on my Mac`，因为我们暂时用不到这个
+接着会问你存在哪，我建议是在用户目录下存一个文件夹专门放置你的 Xcode 项目，这样找代码也方便找。同时建议取消打勾 `Creat Git repository on my Mac`，因为我们暂时用不到这个
 
 ![where](where.png)
 
