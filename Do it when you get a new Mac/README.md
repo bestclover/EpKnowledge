@@ -18,6 +18,10 @@ Mac 的默认鼠标滚动是和 Win 相反的
 
 系统偏好设置 -> 鼠标 -> 取消打钩 **滚动方向：自然**
 
+## 修改触控板
+
+系统偏好设置 -> 触控板 -> 光标与点按 -> 辅助点按：点按右下角
+
 ## 安装 iTerm2 作为你的终端
 
 https://iterm2.com/
@@ -54,6 +58,16 @@ $ xcode-select --install
 
 https://brew.sh/index_zh-cn.html ，然后复制页面上的命令，粘贴到你的终端，执行
 
+你也可以使用清华的源：
+
+```bash
+$ git clone https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
+```
+
+```bash
+$ ~/homebrew/brew
+```
+
 ## 安装你需要的开发工具
 
 ```bash
@@ -84,7 +98,7 @@ $ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/
 
 接着看终端上的提示就行了
 
-## 安装 powerlevel9k
+### 安装 powerlevel9k
 
 ```bash
 $ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
