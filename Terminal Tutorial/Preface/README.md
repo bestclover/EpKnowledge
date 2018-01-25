@@ -89,3 +89,5 @@ CentOS 等等也基本类似
 ### 光标
 
 和记事本、Word 一样，光标所在的区域是让你输入命令的
+
+下一篇：[CMD 入门](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Terminal%20Tutorial/CMD%20guide/README.md)

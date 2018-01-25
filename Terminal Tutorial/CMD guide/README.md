@@ -194,3 +194,5 @@
 当然，这里只敲一个 H 是因为目录下只有一个以 H 开头的文件/文件夹，如果有多的，就输入直到那个字母`仅有一个可配对`的为止
 
 ![gif](fast.gif)
+
+下一篇：[Linux 入门](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Terminal%20Tutorial/Linux%20primer/README.md)
