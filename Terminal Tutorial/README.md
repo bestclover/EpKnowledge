@@ -128,7 +128,7 @@ CentOS 等等也基本类似
 
 ![Hello World](Hello.png)
 
-### 列出当前目录的东西 - dir ###
+### 列出当前目录的东西 - dir
 
 ```batch
 > dir
@@ -140,7 +140,7 @@ CentOS 等等也基本类似
 
 每一行中标了 `<dir>` 的为文件夹 (diretory)
 
-### 新建一个文件夹 - mkdir ###
+### 新建一个文件夹 - mkdir
 
 ``` batch
 > mkdir epi
@@ -293,7 +293,7 @@ CentOS 等等也基本类似
 
 ## Linux命令入门篇 ##
 
-在往下阅读前提示，`$` 是代表着普通用户，不是输入$
+在往下阅读前提示，`$` 是代表着普通用户和 Shell Prompt，不是让你输入$
 
 `.` 代表着`当前文件夹`
 
@@ -303,7 +303,15 @@ CentOS 等等也基本类似
 
 `~` 为用户目录
 
-每个命令的格式都是  名字 + 参数 (空格间隔)
+每个命令的格式都是 名字 + 参数 ，参数间使用空格作为分割
+
+如
+
+```shell
+$ ls ~/.oh-om-zsh -l -a -h
+```
+
+运行 ls 程序，参数分别是 `~/.oh-my-zsh`，`-l`，`-a`，`-h`
 
 你可以在 [Ubuntu 官网](http://cn.ubuntu.com/)，[CentOS 官网](https://www.centos.org/) 等地方下载一个桌面版的 Linux 来练习接下来的这些命令
 
@@ -352,19 +360,25 @@ $ ls
 
 默认会出来非隐藏的文件和文件夹
 
-如果要查看隐藏文件，请使用：
+如果要查看隐藏文件，使用 -a 选项：
 
 ```shell
 $ ls -a
 ```
 
-这些都是仅仅的打印出来，如果要列表并且查看那个文件/文件夹的权限，请使用：
+这些都是仅仅的打印出来，如果要查看详细信息，使用 -l 选项：
 
 ```shell
 $ ls -l
 ```
 
-又想查看隐藏文件又想列表呢？
+![ls-l](ls-l.png)
+
+从左到右的信息分别是：文件类型以及读写权限，文件硬链接数量，所有者，用户组，文件大小，修改时间，文件名字
+
+第一列的第一个字符表示类型，d 是文件夹 (directoty)，l 是硬链接 (link)，- 代表文件。l 的后面还会有一个 -> 表示它链接到什么东西上
+
+同时显示详细信息和隐藏文件：
 
 ```shell
 $ ls -la
@@ -391,6 +405,8 @@ $ ls -l -a
 ```shell
 $ ls -lh
 ```
+
+-h 的意思是 "human readable"，增加可读性的选项
 
 ![ls-lh](ls-lh.png)
 
@@ -458,10 +474,10 @@ rm 命令是用来删除文件/文件夹的
 $ rm 1.c
 ```
 
-这样是删除那个叫做 `1.c` 的文件。若要删除文件夹，请使用：
+这样是删除那个叫做 `1.c` 的文件。若要删除文件夹，使用 -rf 选项：
 
 ```shell
-$ rm -rf [repo name] 
+$ rm -rf [repo name]
 ```
 
 递归删除一个文件夹，删除里面所有的内容
@@ -514,6 +530,20 @@ $ sha1sum [filename]
 echo "Hello World" | sha256sum
 ```
 
+如果你想在 Mac 上用这个工具的话，确保你已经安装了 brew，然后
+
+```shell
+$ brew install coreutils
+```
+
+之后就可以：
+
+```shell
+$ gsha1sum [filename]
+```
+
+coreutils 是一个 GNU 的工具合集，可以自己探索
+
 ### sudo - "super user do"
 
 这是一个带有管理员权限的命令。安装程序，关机等都需要这个命令
@@ -563,7 +593,7 @@ $ sudo reboot
 $ sudo shutdown -h now
 ```
 
-now 是立即的意思s
+now 是立即的意思
 
 重启
 
@@ -833,6 +863,35 @@ cd: shell built-in command
 
 这是因为 cd 是 bash 它自身的命令，而不是一个具体的程序
 
+### type - 查看命令类型
+
+which 是用来查看命令存放位置的，type 是用来显示类型和位置的
+
+```shell
+$ type ls
+```
+
+![type-ls](type-ls.png)
+
+这是一个别名
+
+```shell
+$ type cd
+```
+
+![type-cd](type-cd.png)
+
+这是一个 shell 命令
+
+```shell
+$ type sodu
+```
+
+![type-sudo](type-sudo.png)
+
+这是一个程序
+
+
 ### w - 谁登陆了并且在做什么 ###
 
 服务器是需要登录使用的嘛，哪怕在物理机上直接用也是需要登录的对不对。但是协同工作的需要，一台机子不只是像 Windows 那样只能一个人在用，很多人可以同时登录这台机子。这时候就可以查看有多少人登录了这台机子
@@ -946,6 +1005,10 @@ who 和 w 的区别是，who 只显示谁登陆了
 $ who
 ```
 
+![who](who.png)
+
+第一列是用户名，第二列是登陆设备 (Console, tty)，第三列是登陆时间
+
 ### read - 读取文字到变量
 
 默认读取一行，把它交给特定变量 REPLY：
@@ -968,13 +1031,15 @@ $ read Hello
 
 意思是将读取到的东西交给 Hello
 
-你也可以给一些输出提示 (Mac 环境不适用)：
+像密码一样，输入的时候不回显，使用 -s 选项：
 
 ```shell
-$ read -p "Please input"
+$ read -s
 ```
 
-操作提示的时候很奇怪，Mac 的终端没有 -p，而 iOS 却有，库克果然很奇怪 (
+如果你是 Mac，还会给一个钥匙的图标
+
+![read-s](read-s.png)
 
 ### df - 显示磁盘剩余空间
 
@@ -986,7 +1051,7 @@ $ df
 
 输出的 Sized 为总容量，Used 是已用，Avail 为可用空间，Capacity 是已用的百分比，Filesystem 为文件系统，第一个默认是本地的硬盘，Mounted on 为挂载的位置
 
-以“人类可读”的单位显示剩余空间：
+以增加可读性的单位显示剩余空间：
 
 ```shell
 $ df -h
