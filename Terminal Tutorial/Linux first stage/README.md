@@ -1,8 +1,12 @@
 # Linux 命令 - 初阶
 
+其实把 Linux 的入门学了之后，现在你应该会使用 --help 和 man 来查看每个命令的每个选项怎么使用了
+
+接下来讲的是较常用的一些选项
+
 ## tail - 大文本的查看末尾
 
-有时候一个文本打开时候很大，但你又不想像 cat 那个样子全部阅读，我只需要那末尾的几行或者那些字符，就要用到 tail 命令
+有时候一个文本打开时候很大，但你又不想像 cat 那个样子全部阅读，我只需要**末尾的那几行**或者**末尾的那几个字符**，就要用到 tail 命令
 
 假定我们现在有一段代码，文件名字叫做 main.go，内容是这样的
 
@@ -39,13 +43,13 @@ func main() {
 我们要查看它的后面五行，命令为
 
 ```shell
-$ tail main.go -n 5
+$ tail -n 5 main.go
 ```
 
-也可以
+相当于
 
 ```shell
-$ tail main.go --line 5
+$ tail --line 5 main.go
 ```
 
 ```shell
@@ -57,7 +61,7 @@ $ tail main.go    #这是默认末尾十行
 如果是后面的 30 个字符，命令为
 
 ```shell
-$ tail main.go -c 30
+$ tail -c 30 main.go
 ```
 
 ![tailc](tailc.png)
@@ -75,21 +79,21 @@ $ tail main.go spider.py
 如果你不想显示这个文件名字：
 
 ```shell
-$ tail main.go spider.py --quiet
+$ tail --quiet main.go spider.py
 ```
 
 ## head - 查看大文本的开头
 
-用法基本和 tail 一样，不过在 mac 平台里选项只有 -n 和 -c
+用法基本和 tail 一样，不过如果你在 mac 平台里选项只有 -n 和 -c
 
-你也可以安装了 coreutils 之后用 ghead, gtail
+你也可以安装了 coreutils 之后用 ghead, gtail 等 GNU 的工具
 
 ## which - 查看命令程序的位置
 
 上一章讲环境变量的时候就提到过了，如果你想在当前目录下执行其他目录下的程序，要么加上路径，要么添加环境变量。如果你添加了环境变量，可以直接使用某个程序，那你想看到它具体在文件系统的哪个位置的时候：
 
 ```shell
-$ which [command]
+$ which <command>
 ```
 
 例如：
@@ -128,7 +132,7 @@ $ type cd
 这是一个 shell 命令
 
 ```shell
-$ type sodu
+$ type sudo
 ```
 
 ![type-sudo](type-sudo.png)
@@ -202,7 +206,7 @@ $ ping <url>
 你也可以指定次数
 
 ```shell
-$ ping -c 4 <url>
+$ ping -c <count> <url>
 ```
 
 -c 之后是次数
@@ -212,7 +216,7 @@ $ ping -c 4 <url>
 你也可以指定发送每个 ping packet 的时间间隔
 
 ```shell
-$ ping -i 1 so.com
+$ ping -i <wait> so.com
 ```
 
 -i 选项之后的数字时间单位是秒
@@ -236,7 +240,7 @@ $ ping -q so.com
 你还可以指定发送的 packet 大小
 
 ```shell
-$ ping -s 128 so.com
+$ ping -s <packetsize> so.com
 ```
 
 不指定的情况下默认是 56
@@ -318,5 +322,24 @@ $ du
 ```shell
 $ du -h
 ```
+
+## less - 灵活的查看文本
+
+某些文本是很大的，cat 又不太方便，所以我们可以用 less
+
+```shell
+$ less 1.c
+```
+
+接着会进入到 man 那样操作的界面 (其实 man 的查看就是用的 less)，你还可以用鼠标滚轮来快速翻页
+
+## sleep - 等待一段时间
+
+```shell
+$ sleep <seconds>
+```
+
+\<seconds\> 的单位是秒，通常会在 shell 脚本里配合使用
+
 
 ## 未完待续……

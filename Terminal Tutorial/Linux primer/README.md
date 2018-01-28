@@ -20,6 +20,8 @@ $ ls ~/.oh-om-zsh -l -a -h
 
 运行 ls 程序，参数分别是 `~/.oh-my-zsh`，`-l`，`-a`，`-h`
 
+每一个示例命令的 [] 括号代表着“可选”，<> 括号是必须
+
 你可以在 [Ubuntu 官网](http://cn.ubuntu.com/)，[CentOS 官网](https://www.centos.org/) 等地方下载一个桌面版的 Linux 来练习接下来的这些命令
 
 这些命令大部分同样在 Mac OS 上适用，因为他们的 Shell 都是 bash
@@ -40,6 +42,7 @@ $ ls ~/.oh-om-zsh -l -a -h
 * 创建环境变量
 * 用自己喜欢的方式简写命令
 * 纯命令行的编辑文本
+* 查看命令文档
 
 ## echo
 
@@ -200,7 +203,7 @@ $ rm 1.c
 这样是删除那个叫做 `1.c` 的文件。若要删除文件夹，使用 -rf 选项：
 
 ```shell
-$ rm -rf [repo name]
+$ rm -rf <repo name>
 ```
 
 递归删除一个文件夹，删除里面所有的内容
@@ -479,5 +482,62 @@ $ nano Hello.c
 
 这些命令就已经足够使用来编辑文本了，要想了解更多，在打开 nano 后按下 `ctrl + G`
 
+## man - 查看文档
+
+每一个程序都是有文档去告诉你怎么用的，当然还有简化版的使用帮助，比如“万物 --help”这个约定俗成的选项：
+
+```shell
+$ cat --help
+```
+
+接着会输出一些选项的信息
+
+```shell
+Usage: cat [OPTION]... [FILE]...
+Concatenate FILE(s) to standard output.
+
+With no FILE, or when FILE is -, read standard input.
+
+  -A, --show-all           equivalent to -vET
+  -b, --number-nonblank    number nonempty output lines, overrides -n
+  -e                       equivalent to -vE
+  -E, --show-ends          display $ at end of each line
+  -n, --number             number all output lines
+  -s, --squeeze-blank      suppress repeated empty output lines
+  -t                       equivalent to -vT
+  -T, --show-tabs          display TAB characters as ^I
+  -u                       (ignored)
+  -v, --show-nonprinting   use ^ and M- notation, except for LFD and TAB
+      --help     display this help and exit
+      --version  output version information and exit
+
+Examples:
+  cat f - g  Output f's contents, then standard input, then g's contents.
+  cat        Copy standard input to standard output.
+```
+
+其中的 Usage 就是命令的格式，比如 cat 这个命令的格式就是 cat [OPTION]... [FILE]，意思是 cat + 选项 + 文件
+
+比如我们之前写到的
+
+```shell
+$ cat -EbT 1.c 2.c
+```
+
+完整版的使用说明：
+
+```shell
+$ man cat
+```
+
+接着会跳出一个文档
+
+![man-cat](man-cat.png)
+
+接着你就可以用鼠标滚轮去查看使用文档了
+
+退出的话按 q 键就可以了
+
+---
 
 下一篇：[Linux 初阶](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Terminal%20Tutorial/Linux%20first%20stage/README.md)
