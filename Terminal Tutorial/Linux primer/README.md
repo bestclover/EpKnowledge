@@ -24,7 +24,9 @@ $ ls ~/.oh-om-zsh -l -a -h
 
 你可以在 [Ubuntu 官网](http://cn.ubuntu.com/)，[CentOS 官网](https://www.centos.org/) 等地方下载一个桌面版的 Linux 来练习接下来的这些命令
 
-这些命令大部分同样在 Mac OS 上适用，因为他们的 Shell 都是 bash
+另，你也可以在[这里](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Install%20Ubuntu/README.md)查看怎么在虚拟机里安装一个 Ubuntu
+
+这些命令大部分同样在 Mac OS 上适用，因为他们的 Shell 都是 bash，些许差异不过是 BSD 和 Linux 的差异
 
 不适用的我会给出详细标注
 
