@@ -13,4 +13,4 @@
 ## 目录
 
 * [安装 Ubuntu 桌面版](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Install%20Ubuntu/Ubuntu%20GUI/README.md)
-* 安装 Ubuntu 服务器版 (没有图形化界面)
+* [安装 Ubuntu 服务器版 (没有图形化界面)](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Install%20Ubuntu/Ubuntu%20Server/README.md)
