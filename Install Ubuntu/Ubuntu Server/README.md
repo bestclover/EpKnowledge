@@ -138,11 +138,25 @@
 
 移除之后按下回车，过了一会便会重启了
 
-## 配置
+安装 (不含之前的配置步骤) 会经过以下过程：
+
+* 正在安装系统
+* 正在配置 apt
+  * 设置代理
+* 选择并安装软件
+  * 正在设定 tasksel
+  * 软件选择
+* 安装 GRUB 启动引导器
+* 正在结束安装进程
+  * 取出安装介质
+
+你可以用这个列表来确认自己的安装进度
+
+## 配置 Ubuntu
 
 ### 登陆
 
-重启之后，启动完成会让你登陆，这个填安装时的你输入的用户名和密码就行
+重启之后，启动完成会让你登陆，这个填安装时的你输入的用户名和密码
 
 ![login](login.png)
 
@@ -160,7 +174,7 @@ $ sudo nano /etc/apt/source.list
 
 ![cmd-nano](cmd-nano.png)
 
-执行之后会让你输入用户密码，验证后就会开始编辑 source.list 文件了，把文件上的 http://cn.archive.ubuntu.com/ubuntu 这样的链接，把 `cn.archive.ubuntu.com` 部分更改为
+执行之后会让你输入用户密码，验证后就会开始编辑 source.list 文件了，把文件上的 `http://cn.archive.ubuntu.com/ubuntu` 这样的链接，把 `cn.archive.ubuntu.com` 部分更改为
 
 ```
 mirrors.ustc.edu.cn
@@ -173,6 +187,8 @@ mirrors.ustc.edu.cn
 大概需要改 7 行，security 的部分就不要碰了，其中我删掉了几行注释，只是为了方便你们查看应该修改哪些地方。nano 的操作就是用光标进行移动，和记事本一样
 
 编辑结束后确认一下没有拼错的地方，按下 ctrl + o (Mac 上是 control) 键之后回车进行保存。之后按下 ctrl + x 退出，以看到用户名@主机名为退出标志
+
+当然，编译源列表文件如果你更熟悉 vim 的话可以使用 vim，记得带上 sudo
 
 ### 安装 openssh
 
@@ -234,7 +250,7 @@ $ sudo shutdown now
 
 图上的 ssh 是名字，6666 是本地映射到虚拟机的端口，这两个你可以跟着感觉走
 
-端口号是一个无符号的 int，从 81 到 65535 都可以自定
+端口号是一个无符号的 int，从 81 到 65535 都可以
 
 设置完成后，两次确定，保存
 
@@ -267,3 +283,38 @@ $ ssh epi@127.0.0.1 -p 6666
 ### 我是 Win 平台该怎么登陆？
 
 下载一个 git，用 git bash 登陆就可以了，命令都是一样的
+
+### 命令行的关机？
+
+执行 shutdown 命令就可以
+
+### 127.0.0.1 太麻烦了
+
+你可以配置 `~/.ssh/config` 文件来方便自己
+
+```bash
+$ nano ~/.ssh/config
+```
+
+然后写下接下来这些东西
+
+```
+Host EpUbuntu
+  Hostname 127.0.0.1
+  Port 6666
+  User epi
+  Compression no
+  PreferredAuthentications password
+```
+
+其中 Host 就是你服务器的名字，Hostname 是地址，Port 为端口号，填的是你转发端口设置的东西，User 为你的用户名，Compression 照抄，PreferredAuthentications 就用密码 `password`，如果你更改了虚拟机上的 sshd_config 的话可以考虑用密钥链接
+
+这样你就可以使用 `ssh EpUbuntu` 这样简短的命令来连接了
+
+如果你还想更简便
+
+```bash
+$ alias CONNECT='ssh EpUbuntu'
+```
+
+把这句写进 .bashrc .zshrc 等文件里
