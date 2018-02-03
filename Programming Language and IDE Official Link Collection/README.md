@@ -2,7 +2,11 @@
 
 一些语言和 IDE 的官方网址
 
+写这个仅是为了方便一些，遵守“任何软件都从官网下载的原则”
+
 ## C
+
+官网暂时未知
 
 ## Python
 
@@ -20,7 +24,7 @@ CPython 开源地址：https://github.com/python/cpython
 
 C# 实际上在 Windows 上就有一个叫做 csc 的编译器，在你的 C 盘 -> Windows -> Microsoft.NET -> Framework64(也有可能没有 64，具体根据你的系统) -> (版本号) -> csc.exe
 
-C# 开发建议使用 Visual Studio
+C# 开发 IDE 建议使用 Visual Studio
 
 ## Crystal
 

@@ -12,5 +12,6 @@
   * [Linux 入门](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Terminal%20Tutorial/Linux%20primer/README.md)
   * [Linux 初阶](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Terminal%20Tutorial/Linux%20first%20stage/README.md)
 
+---
 
-## 未完待续
+未完待续……
