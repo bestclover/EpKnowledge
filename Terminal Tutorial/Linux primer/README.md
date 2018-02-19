@@ -37,7 +37,7 @@ $ ls ~/.oh-om-zsh -l -a -h    #字体小一点的可以放大，不然可能会�
 * [查看目录](#ls---list)
 * [查看环境变量](#env---查看环境变量)
 * [运行程序](#执行当前目录下的文件)
-* [查看文本文件的内容](#cat---拼接文件)
+* [查看文本文件的内容](https://github.com/m4XEp1/Epis-Knowledge-Repo/tree/master/Terminal%20Tutorial/Linux%20primer/cat/README.md)
 * [知道自己姓甚名谁](#whoami---我是谁)
 * 创建/删除 文件/文件夹
 * [关机与重启](#shutdownreboot---关机和重启)
@@ -47,6 +47,8 @@ $ ls ~/.oh-om-zsh -l -a -h    #字体小一点的可以放大，不然可能会�
 * [用自己喜欢的方式简写命令](#alias---用自己喜欢的别名命名命令)
 * [纯命令行的编辑文本](#nano---命令行下的可视化编辑器)
 * [查看命令文档](man---查看文档)
+
+本文及接下来的 **Linux 初阶、Linux 进阶、Linux 高阶、Linux 专业** 中的命令全部都在 Arch Linux 中使用过，保证文章的正确性。如有错误，请提 issue，万分感谢
 
 ---
 

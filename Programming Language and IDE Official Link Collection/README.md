@@ -2,7 +2,7 @@
 
 一些语言和 IDE 的官方网址
 
-写这个仅是为了方便一些，遵守“任何软件都从官网下载的原则”
+写这个仅是为了方便一些，遵守“任何软件都从官网下载”的原则
 
 ## C
 
@@ -71,10 +71,6 @@ C# 开发 IDE 建议使用 Visual Studio
 下载页：https://swift.org/download
 
 开源地址：https://github.com/apple/swift
-
-## MarkDown
-
-暂无
 
 ## AsciiDoc
 

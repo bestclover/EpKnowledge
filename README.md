@@ -21,6 +21,11 @@
 * [当你拿到一台新 Mac 之后](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Do%20it%20when%20you%20get%20a%20new%20Mac/README.md)
 * [一些 IDE 和语言的官网](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Programming%20Language%20and%20IDE%20Official%20Link%20Collection/README.md)
 
+## 计划中……
+
+* Linux 初阶命令
+* stdin, stdout 和管道
+
 ## 许可证
 
-MIT
+MIT License

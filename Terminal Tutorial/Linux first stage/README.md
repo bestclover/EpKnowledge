@@ -245,9 +245,9 @@ $ ping -s <packetsize> so.com
 
 不指定的情况下默认是 56
 
-## who - 简化版的 w
+## who - 谁已经登陆了
 
-who 和 w 的区别是，who 只显示谁登陆了
+who 和 w 的区别是，who 只显示用户，时间和登录设备
 
 ```shell
 $ who
@@ -341,5 +341,22 @@ $ sleep <seconds>
 
 \<seconds\> 的单位是秒，通常会在 shell 脚本里配合使用
 
+## wall - 给所有已登录用户发送消息
+
+命令格式：`$ wall [-g group] [file]`
+
+加上 -g 之后后面跟上用户组，既将消息发送到指定用户组的用户上面。如不指定，默认发送给已登录的用户 (无论登陆场景)
+
+[file] 参数如果未指定，默认从 stdin 获取
+
+```shell
+$ echo "你好，世界" | wall
+$ wall "你好，世界"
+$ wall Hello.txt
+```
+
+![wall](wall.png)
+
+---
 
 ## 未完待续……
