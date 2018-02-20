@@ -34,7 +34,7 @@ $ ls ~/.oh-om-zsh -l -a -h    #字体小一点的可以放大，不然可能会�
 
 学完这些，你应该会的是：
 
-* [查看目录](#ls---list)
+* [查看目录](https://github.com/m4XEp1/Epis-Knowledge-Repo/tree/master/Terminal%20Tutorial/Linux%20primer/ls/README.md)
 * [查看环境变量](#env---查看环境变量)
 * [运行程序](#执行当前目录下的文件)
 * [查看文本文件的内容](https://github.com/m4XEp1/Epis-Knowledge-Repo/tree/master/Terminal%20Tutorial/Linux%20primer/cat/README.md)
@@ -92,73 +92,6 @@ echo 有三个参数：
 | \b | 退格
 | \c | \c 之后的字符均不输出
 
-## ls - list
-
-`ls` 命令的作用和 win 上的 `dir` 一样，是列出当前目录下的文件和文件夹的
-
-```shell
-$ ls
-```
-
-默认会出来当前工作目录下非隐藏的文件和文件夹
-
-你也可以列出其他目录的内容：
-
-```shell
-$ ls [path]
-```
-
-如果要查看隐藏文件，使用 -a 选项：
-
-```shell
-$ ls -a
-```
-
-这些都是仅仅的打印出来，如果要查看详细信息，使用 -l 选项：
-
-```shell
-$ ls -l
-```
-
-![ls-l](ls-l.png)
-
-从左到右的信息分别是：文件类型以及读写权限，文件硬链接数量，所有者，用户组，文件大小，修改时间，文件名字
-
-第一列的第一个字符表示类型，d 是文件夹 (directoty)，l 是硬链接 (link)，- 代表文件。l 的后面还会有一个 -> 表示它链接到什么东西上
-
-同时显示详细信息和隐藏文件：
-
-```shell
-$ ls -la
-```
-
-相当于
-
-```shell
-$ ls -a -l
-```
-
-```shell
-$ ls -l -a
-```
-
-除了 ls 外顺序调换没关系的，-la 只是 ls 程序方便了我们一丢丢而已
-
-这里的 ls 是程序名字，-a -l 是传给 ls 的参数，ls 程序会分析参数来做事情
-
-![lsla](ls-la.png)
-
--l 的前提下，想查看可读性较好的文件大小：
-
-```shell
-$ ls -lh
-```
-
--h 的意思是 "human readable"，增加可读性的选项
-
-![ls-lh](ls-lh.png)
-
-大小单位这个就不在这啰嗦了
 
 ## cd
 
