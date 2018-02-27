@@ -25,6 +25,18 @@
 
 * Linux 初阶命令
 * stdin, stdout 和管道
+* 使用 VS Code 开发调试 TypeScript
+
+## 捐赠
+
+我用了很多时间在写这些文章上，请我喝一杯咖啡吧，这能使我有动力写出更好的文章来
+
+我的 [PayPal](paypal.me/epichan)
+
+<figure class="half">
+    <img src="alipay.jpg" width="300">
+    <img src="wechat.jpg" width="300">
+</figure>
 
 ## 许可证
 
