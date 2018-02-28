@@ -31,7 +31,7 @@
 
 我用了很多时间在写这些文章上，请我喝一杯咖啡吧，这能使我有动力写出更好的文章来
 
-我的 [PayPal](paypal.me/epichan)
+我的 [PayPal](https://www.paypal.me/epichan)
 
 <figure class="half">
     <img src="alipay.jpg" width="300">

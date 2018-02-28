@@ -22,6 +22,7 @@ mkdir 提供了许多的选项，下面逐一介绍
 
 ```shell
 $ mkdir -m 600 hello
+$ mkdir --mode=600 hello    # 两个命令等价
 ```
 
 ```
@@ -30,6 +31,33 @@ $ chmod 600 hello
 ```
 
 意思是，上面两个命令，等价
+
+## -p, --parents
+
+如果要创建的文件夹已存在，不显示错误。会创建父目录在需要的时候
+
+后面一句话是什么意思呢？假定你要往新建的文件夹里再新建一个文件夹，通常情况下，你需要执行两次 mkdir。而加上 `-p` 选项后，你可以直接创建
+
+假定我们要在当前目录下新建一个叫做 epi 的文件夹，并且在 epi 里再新建一个叫做 epi2 的文件夹，在以往是这么做的
+
+```shell
+$ mkdir epi
+$ mkdir epi/epi2
+```
+
+甚至是
+
+```shell
+$ mkdir epi
+$ cd epi
+$ mkdir epi2
+```
+
+现在只需要
+
+```shell
+$ mkdir -p epi/epi2
+```
 
 ## -v, --verbose
 
@@ -42,7 +70,3 @@ $ chmod 600 hello
 ## --version
 
 显示当前 mkdir 的版本
-
----
-
-未完待续
