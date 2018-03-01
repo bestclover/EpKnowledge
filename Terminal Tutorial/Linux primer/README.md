@@ -45,7 +45,7 @@ $ ls ~/.oh-om-zsh -l -a -h    #字体小一点的可以放大，不然可能会�
 * [知道自己在哪个路径](#pwd---显示完整路径)
 * [创建环境变量](#export---添加环境变量)
 * [用自己喜欢的方式简写命令](#alias---用自己喜欢的别名命名命令)
-* [纯命令行的编辑文本](#nano---命令行下的可视化编辑器)
+* [纯命令行的编辑文本](https://github.com/m4XEp1/Epis-Knowledge-Repo/tree/master/Terminal%20Tutorial/Linux%20primer/nano/README.adoc)
 * [查看命令文档](man---查看文档)
 
 本文及接下来的 **Linux 初阶、Linux 进阶、Linux 高阶、Linux 专业** 中的命令全部都在 Arch Linux 中使用过，保证文章的正确性。如有错误，请提 issue，万分感谢
@@ -395,34 +395,6 @@ $ alias DISMISS="sudo shutdown now"
 ```shell
 $ alias
 ```
-
-## nano - 命令行下的“可视化”编辑器
-
-假定你所使用的 Linux 是没有 GUI 的，只有一台显示器和键盘，那么我们要编辑文本的话，用 `echo` 不太现实，所以我们用 nano 来编辑文本文件
-
-```shell
-$ nano
-```
-
-![nano](nano.png)
-
-于是我们打开了一个编辑器，这个就可以直接写东西了。控制就用方向键的上下左右
-
-写完之后按下 `ctrl + O` 来保存 (Mac 上是 `Control键 + O`)，接着会让你写保存的文件名，写完按下回车就好了
-
-![write](write.png)
-
-退出的话，用 `ctrl + X`，图片上的 ^ 就是 ctrl 键 (Mac 上是 control 键不是 command 键)
-
-如果要打开现有文件，把文件名字作为参数名
-
-```shell
-$ nano Hello.c
-```
-
-在编辑的时候，用 `ctrl + V` 翻到下一页，`ctrl + Y` 翻到上一页。`ctrl + P` 跳到下一行，`ctrl + X` 跳到上一行。当然，你也可以用鼠标滚轮去翻页
-
-这些命令就已经足够使用来编辑文本了，要想了解更多，在打开 nano 后按下 `ctrl + G`，界面上都会有提示
 
 ## man - 查看文档
 
