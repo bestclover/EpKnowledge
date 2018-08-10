@@ -90,7 +90,7 @@ TIP:如果此时并没有出现下图的信息，那么很可能你的代理 / V
 
 `-F` 选项是 list formats 的意思，过一会工具就会下载好该视频的所有质量音视频的信息
 
-image::info.png[]
+image::video_info.png[]
 
 图中的 format code 是我们应该记下来的，因为我们要找到质量最佳的音频代码和视频代码
 
@@ -118,7 +118,7 @@ image::download.png[]
 
 [source,shell]
 ----
-ffmpeg -i 1.webm -i 2.mp4 3.mp4
+$ ffmpeg -i 1.webm -i 2.mp4 3.mp4
 ----
 
 `-i` 的作用是标记**输入**文件，而没有的时候也就意味着**输出**文件了

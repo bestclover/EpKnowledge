@@ -15,6 +15,7 @@
 * [在命令行下编译 C 语言](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Compile%20C%20on%20command/README.md)
 * [Visual Studio 安装使用向导](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Visual%20Studio%20Tutorial/README.md)
 * [安装 Ubuntu (虚拟机)](https://github.com/m4XEp1/Epis-Knowledge-Repo/blob/master/Install%20Ubuntu/README.md)
+* [使用 youtube-dl 下载 YouTube 视频](https://github.com/m4XEp1/EpKnowledge/blob/master/Download%20video%20from%20YouTube%20using%20youtebe-dl/README.adoc)
 
 ## 个人认为不属于教程范围内的
 
