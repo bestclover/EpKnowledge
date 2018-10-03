@@ -196,5 +196,6 @@ $ sudo apt install nodejs-legacy
 ### 勤升级
 
 ```bash
+$ sudo apt-get update
 $ sudo apt-get upgrade
 ```
